@@ -17,17 +17,13 @@ void bisection(int a, int b, double tol, double max_iter){
     }
     
     for (int i = 1; i < max_iter; i++){
-        //std::cout << "a" << i << " = " << ai << std::endl;
-        //std::cout << "b" << i << " = " << bi << std::endl;
-        
+
         double p = (ai + bi)/2.0;
         std::cout << "P" << i << " = " << p << std::endl;
         
         double fp = function(p);
         fa = function(ai);
-        
-        //std::cout << "f(p)=" << fp << std::endl;
-        //std::cout << "f(a)=" << fa << std::endl  << std::endl;
+
         if (fp == 0 || (bi - ai)/2.0 < tol){
             std::cout << "Finished in " << i << " iterations" << std::endl ;
             break;
@@ -46,13 +42,14 @@ void bisection(int a, int b, double tol, double max_iter){
 double function(double x){
     
    // double cube = pow(0, 3);
-    double cosin = cos(x);
    // double square = pow(x, 2);
+   // double variable = 0;
+   // double constant = 0;
+    
+    double cosin = cos(x);
     double squareRoot = sqrt(x);
-  //  double variable = 0;
-    //double constant = 0;
     double result = squareRoot - cosin;
-    //std::cout << result << std::endl;
+   // std::cout << result << std::endl;
     return result;
 }
 int main() {
